@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../css.css">
+    <title>Contacto</title>
+</head>
+
+<body>
+    <header>
+        <!-- <div class="downloadApp">
+            <p>Descarga la <a href=""><b>App</b></a></p>
+        </div> -->
+        <div class="selection">
+            <a href="artists.html"><b>Artistas</b></a>
+            <a href="info.html"><b>+Info</b></a>
+            <a href="index.html"><img src="/img/logoHead.png" ></a>
+            <a href="shop.html"><b>Tienda</b></a>
+            <a href="contact.html"><b>Contacto</b></a>
+        </div>
+    </header>
+
+    <h1 class="titleHeader">Contacto</h1>
+
+    <div class="formContainer">
+        <label for="inputNameContact">NOMBRE</label>
+        <input id="inputNameContact" type="text" autocomplete="off">
+
+        <label for="inputEmailContact">CORREO</label>
+        <input id="inputEmailContact" type="email" autocomplete="off">
+
+        <label for="textMessageContact">MENSAJE</label>
+        <textarea id="textMessageContact" cols="30" rows="5" placeholder="Escribe aquí tu mensaje..."
+            autocomplete="off"></textarea>
+
+        <input class="buttonContact" type="submit" value="Enviar" onclick="sendEmail()">
+    </div>
+
+    <div id="messageContainer">
+        <span id="spanContact"></span>
+    </div>
+
+    <img id="imgGoat" src="/img/cabraContacto.png">
+
+    <footer class="footer">
+        <div id="izq">
+            <span>© 25/06/2024 Página creada por Javier Valenzuela. Todos los derechos reservados</span>
+        </div>
+        <nav id="nav_footer">
+            <a href=""><img src="/img/instagram.png"></a>
+            <a href=""><img src="/img/facebook.png"></a>
+            <a href=""><img src="/img/twitterx.png"></a>
+        </nav>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+
+</html>
