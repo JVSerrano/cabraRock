@@ -1,17 +1,18 @@
-
 * {
     box-sizing: border-box;
-  }
-
-body {
-    /* background-color: black; */
-    background-image: url('/img/fondo.jpg');
-    position: relative;
-    margin: 0;
-    padding-bottom: 3em;
-    min-height: 100vh;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
 
 .downloadApp {
     display: flex;
@@ -24,13 +25,13 @@ body {
     color: black;
 }
 
+
 .selection {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: white;
     width: 100%;
-    
 }
 
 .selection a {
@@ -44,7 +45,7 @@ body {
     display: block;
     width: 0;
     height: 4px;
-    background-color: rgb(109, 129, 109);;
+    background-color: rgb(109, 129, 109);
     transition: all 300ms;
 }
 
@@ -59,72 +60,87 @@ body {
     height: 100px;
 }
 
-#imgHome {
-    position: absolute;
-    top: 10;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+@media (max-width: 768px) {
+    .selection {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .selection a {
+        font-size: small;
+        margin: 3px;
+    }
+
+    .selection img {
+        width: 100px;
+        height: 50px;
+        margin: 5px;
+    }
 }
 
-#imgIndex {
-    position: relative;
-    width: 100%;
-    height: 84vh;
+.backGroundImageIndex {
+    background-image: url('/img/indexImg.png'); 
+    background-size: cover;
     text-align: center;
+    padding: 310px; 
+
+    @media (max-width: 480px) {
+        padding: 70% 20px; 
+    }
 }
 
 #textCenter {
-    position: absolute;
+    position: fixed; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(151, 151, 151, 0.79);
-    border-radius: 20px;
-    padding: 4vw;
+    margin: 0;
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+    background-color: #5c5c5ca8;
 }
 
 #textCenter p {
-    font-size: 3vw;
+    font-size: 3vw; /* Ajustar el tamaño de fuente según el diseño deseado */
 }
 
-#textBotton {
-    text-align: center;
-    background-color: rgb(109, 129, 109);
-    padding: 8px;
-    font-size: x-large;
-    color: white;
-}
 
-#textBotton:hover {
-    background-color: white;
-    color: rgb(27, 117, 27);
-    cursor: pointer;
-}
 
-footer {
-    display: flex;
+.footer {
     background-color: rgb(238, 236, 236);
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px;
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    flex-shrink: 0;
 }
 
-footer svg {
-    padding: 20px;
-    padding-left: 50px;
-    width: 60px;
-    height: 20px;
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #nav_footer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #nav_footer a {
+        margin: 0 10px;
+    }
 }
 
 /* Artistas */
-.backGroundImage{
+.backGroundImage {
     background-image: url('/img/fondo.jpg');
+    background-size: cover;
 }
+
 
 .titleHeader {
     text-align: center;
@@ -136,12 +152,45 @@ footer svg {
 }
 
 
+#newArtist {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    margin: 20px 0;
+}
+
+.newArtistInput {
+    margin: 10px;
+    font-size: 0.7em;
+    padding: 5px;
+    width: calc(80% - 22px);
+    max-width: 380px;
+    border-radius: 4px;
+}
+
+#newArtist button {
+    margin-left: 10px;
+    padding: 12px 12px;
+    font-size: 16px;
+    background-color: #5c5c5c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#newArtist button:hover {
+    background-color: rgb(109, 129, 109);
+}
+
 .cards-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .container {
@@ -151,8 +200,6 @@ footer svg {
     border-radius: 10px;
     background-color: #dcdada;
     text-align: center;
-    margin-left: 25px;
-    margin-right: 25px;
 }
 
 .imgArtists {
@@ -178,14 +225,6 @@ footer svg {
     word-wrap: break-word;
 }
 
-#newArtist {
-    font-size: 25px;
-    color: white;
-    text-align: center;
-    justify-content: center;
-    text-shadow: 
-        1px 1px 1px rgb(0, 0, 0);
-}
 
 /* Tienda */
 
@@ -193,7 +232,8 @@ footer svg {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px; /* Espacio entre las tarjetas */
+    gap: 16px;
+    /* Espacio entre las tarjetas */
     padding: 20px;
 }
 
@@ -220,8 +260,8 @@ footer svg {
 .infMerchand {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
-    height: 100%; 
+    justify-content: space-between;
+    height: 100%;
 }
 
 .price {
@@ -251,7 +291,7 @@ footer svg {
 
 .quantityAdd {
     display: flex;
-    justify-content:end;
+    justify-content: end;
     align-items: center;
 }
 
@@ -277,7 +317,7 @@ footer svg {
 }
 
 
-.titleHeaderShop{
+.titleHeaderShop {
     display: flex;
     align-items: center;
     background-color: rgb(109, 129, 109);
@@ -304,9 +344,11 @@ footer svg {
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 #shoppingBasket {
     position: relative;
 }
+
 .buttonPay {
     display: block;
     margin-top: 10px;
@@ -319,7 +361,7 @@ footer svg {
 
 /* CONTACTO */
 
-.buttonContact{
+.buttonContact {
     padding: 8px 8px;
     font-size: 16px;
     background-color: #5c5c5c;
@@ -329,18 +371,16 @@ footer svg {
     cursor: pointer;
 }
 
-.buttonContact:hover{
+.buttonContact:hover {
     background-color: rgb(109, 129, 109);
 }
 
 .formContainer {
-    margin-top: 50px;
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 30px;
-    border-radius: 15px; 
+    border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     color: #ffffff;
-    width: 450px; 
     text-align: left;
     position: absolute;
     left: 50%;
@@ -348,19 +388,27 @@ footer svg {
     transform: translate(-50%, -50%);
 }
 
-.formContainer label, 
-.formContainer input, 
-.formContainer textarea, 
+@media (max-width: 600px) {
+    .formContainer {
+        margin-top: 30%;
+        width: 90%;
+        max-width: none;
+    }
+}
+
+.formContainer label,
+.formContainer input,
+.formContainer textarea,
 .formContainer .buttonContact {
     width: 100%;
     margin-bottom: 15px;
 }
 
-.formContainer input, 
+.formContainer input,
 .formContainer textarea {
     padding: 10px;
     border: 1px solid #444;
-    border-radius: 5px; 
+    border-radius: 5px;
     background-color: #333;
     color: #fff;
     font-size: 14px;
@@ -373,48 +421,71 @@ footer svg {
 
 .inputContainer .emailIcon {
     position: absolute;
-    top: 38%;
-    right: 5px;
+    top: 0%;
+    left: 100%;
     transform: translateY(-50%);
 }
 
 #imgGoat {
-    position: fixed;
+
+    position: absolute;
     bottom: 25px;
     right: 1px;
-    width: 250px; 
+    width: 250px;
+}
+
+@media screen and (max-width: 600px) {
+    #imgGoat {
+        display: none;
+    }
 }
 
 #messageContainer {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo semitransparente */
+    z-index: 1000;
+    /* Asegura que esté por encima de otros elementos */
 }
 
 .messageContact {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 
 /* +Info */
 
 #moreInf {
-    position: absolute;
+    text-align: center;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 8px;
+    margin: 0;
+    padding: 20px;
+    border-radius: 10px;
     color: white;
+}
+
+.backGroundImageInf {
+    background-image: url('/img/fondo.jpg');
+    background-size: cover;
     text-align: center;
+    padding: 282px;
+
+
+    @media (max-width: 480px) {
+        padding: 70% 20px;
+        /* Ajuste de padding para pantallas móviles */
+    }
 }
