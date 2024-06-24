@@ -169,6 +169,9 @@ function pay() {
   }
 }
 
+function closePay(){
+  showSpan()
+}
 
 // CONTACT
 
